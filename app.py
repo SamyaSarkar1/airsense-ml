@@ -1,8 +1,10 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 app = Flask(__name__)
+CORS(app)
 
 # Load AQI data
 df = pd.read_csv("aqi_data.csv")
